@@ -33,11 +33,14 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
+      <header className="sticky top-0 z-50 w-full border-b bg-card shadow-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Icon name="ShoppingBag" size={28} className="text-primary" />
-            <span className="text-2xl font-bold text-primary">WildMarket</span>
+            <Icon name="ShoppingBag" size={28} className="text-secondary" />
+            <span className="text-2xl font-bold">
+              <span className="text-secondary">Wibes</span>
+              <span className="text-primary">OK</span>
+            </span>
           </div>
           
           <div className="hidden md:flex flex-1 max-w-xl mx-8">
@@ -80,7 +83,7 @@ export default function Index() {
         </div>
       </header>
 
-      <nav className="border-b bg-white">
+      <nav className="border-b bg-card">
         <div className="container flex gap-6 py-3 overflow-x-auto">
           <button
             onClick={() => setActiveSection('home')}
@@ -128,7 +131,7 @@ export default function Index() {
       <main className="container py-8">
         {activeSection === 'home' && (
           <>
-            <section className="mb-12 bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 md:p-12">
+            <section className="mb-12 bg-gradient-to-r from-purple-900/30 to-orange-900/30 rounded-2xl p-8 md:p-12 border border-border">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
@@ -153,8 +156,8 @@ export default function Index() {
                 </div>
                 
                 <div className="flex justify-center">
-                  <div className="bg-white p-6 rounded-2xl shadow-lg">
-                    <div className="w-48 h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                  <div className="bg-card border border-border p-6 rounded-2xl shadow-lg">
+                    <div className="w-48 h-48 bg-muted rounded-lg flex items-center justify-center mb-4">
                       <div className="text-center">
                         <div className="w-40 h-40 border-4 border-primary rounded-lg flex items-center justify-center">
                           <Icon name="QrCode" size={120} className="text-primary" />
@@ -199,11 +202,11 @@ export default function Index() {
                 {products.map((product) => (
                   <Card key={product.id} className="group cursor-pointer hover:shadow-lg transition-shadow overflow-hidden">
                     <CardContent className="p-0">
-                      <div className="relative aspect-square bg-gray-100">
+                      <div className="relative aspect-square bg-muted">
                         <Badge className="absolute top-2 left-2 bg-primary text-white">
                           -{product.discount}%
                         </Badge>
-                        <button className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button className="absolute top-2 right-2 w-8 h-8 bg-card rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                           <Icon name="Heart" size={18} />
                         </button>
                       </div>
@@ -268,12 +271,12 @@ export default function Index() {
                       <p className="font-semibold">Заказ №{12345 + order}</p>
                       <p className="text-sm text-muted-foreground">От 25 октября 2024</p>
                     </div>
-                    <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                    <Badge variant="outline" className="bg-green-900/30 text-green-400 border-green-700">
                       Доставлен
                     </Badge>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gray-100 rounded-lg"></div>
+                    <div className="w-16 h-16 bg-muted rounded-lg"></div>
                     <div className="flex-1">
                       <p className="font-medium">Товары: 3 шт.</p>
                       <p className="text-sm text-muted-foreground">Сумма: 8 997 ₽</p>
@@ -352,7 +355,7 @@ export default function Index() {
         )}
       </main>
 
-      <footer className="border-t bg-white mt-16">
+      <footer className="border-t bg-card mt-16">
         <div className="container py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
