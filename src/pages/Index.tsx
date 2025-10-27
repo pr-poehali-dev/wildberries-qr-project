@@ -137,11 +137,39 @@ export default function Index() {
                   <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
                     Получить заказ легко!
                   </h1>
-                  <p className="text-lg text-muted-foreground mb-6">
+                  <p className="text-lg text-muted-foreground mb-8">
                     Отсканируйте QR-код или введите трек-номер для получения заказа
                   </p>
                   
-                  <div className="flex gap-3 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div className="group">
+                      <Button 
+                        size="lg" 
+                        className="w-full bg-primary hover:bg-primary/90 text-lg h-14 relative overflow-hidden transition-all duration-300 hover:scale-105"
+                      >
+                        <Icon name="Package" size={24} className="mr-2" />
+                        Забрать заказ
+                      </Button>
+                      <p className="text-xs text-muted-foreground mt-2 text-center">
+                        когда тебе уже не терпится 📦
+                      </p>
+                    </div>
+                    
+                    <div className="group">
+                      <Button 
+                        size="lg" 
+                        className="w-full bg-secondary hover:bg-secondary/90 text-lg h-14 relative overflow-hidden transition-all duration-300 hover:scale-105"
+                      >
+                        <Icon name="QrCode" size={24} className="mr-2" />
+                        Создать QR
+                      </Button>
+                      <p className="text-xs text-muted-foreground mt-2 text-center">
+                        для тех, кто в теме 😎
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-3">
                     <Input
                       type="text"
                       placeholder="Введите трек-номер"
@@ -149,7 +177,7 @@ export default function Index() {
                       onChange={(e) => setTrackNumber(e.target.value)}
                       className="flex-1"
                     />
-                    <Button size="lg" className="bg-primary hover:bg-secondary">
+                    <Button size="lg" className="bg-accent hover:bg-accent/80">
                       Найти
                     </Button>
                   </div>
