@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -28,6 +29,7 @@ const products = [
 ];
 
 export default function Index() {
+  const navigate = useNavigate();
   const [trackNumber, setTrackNumber] = useState('');
   const [activeSection, setActiveSection] = useState('home');
 
@@ -55,6 +57,14 @@ export default function Index() {
           </div>
 
           <nav className="flex items-center gap-4">
+            <Button 
+              variant="outline"
+              onClick={() => navigate('/seller')}
+              className="hidden md:flex"
+            >
+              <Icon name="Store" size={18} className="mr-2" />
+              Для продавцов
+            </Button>
             <Button 
               variant="ghost" 
               size="icon"
